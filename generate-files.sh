@@ -44,7 +44,7 @@ runs:
 EOF
     cat <<EOF > "ci-tests/$name-$version-nocuda/Dockerfile" 
 FROM $dockerTag
-COPY ci-tests/$name-$version-nocuda/entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 EOF
     cat <<EOF > "ci-tests/$name-$version-nocuda/entrypoint.sh"
