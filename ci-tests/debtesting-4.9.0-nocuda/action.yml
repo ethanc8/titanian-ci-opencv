@@ -1,5 +1,0 @@
-name: 'Run debtesting-4.9.0-nocuda dockerfile'
-description: 'Run debtesting-4.9.0-nocuda dockerfile'
-runs:
-  using: 'docker'
-  image: 'ci-tests/debtesting-4.9.0-nocuda/Dockerfile'

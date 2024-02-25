@@ -40,7 +40,7 @@ name: 'Run $name-$version-nocuda dockerfile'
 description: 'Run $name-$version-nocuda dockerfile'
 runs:
   using: 'docker'
-  image: 'ci-tests/$name-$version-nocuda/Dockerfile'
+  image: 'Dockerfile'
 EOF
     cat <<EOF > "ci-tests/$name-$version-nocuda/Dockerfile" 
 FROM $dockerTag
@@ -99,16 +99,18 @@ generateForOS() {
 clean
 makedirs
 
-generateForOS debsid 'debian:sid'
-generateForOS debtesting 'debian:testing'
-# ADD NEW CODENAMES HERE
-generateForOS deb12 'debian:12'
-generateForOS deb11 'debian:11'
-generateForOS deb10 'debian:10'
-
-generateForOS ubudevel 'ubuntu:devel'
-# ADD NEW CODENAMES HERE
-generateForOS ubu2310 'ubuntu:mantic'
 generateForOS ubu2204 'ubuntu:jammy'
-generateForOS ubu2004 'ubuntu:focal'
-generateForOS ubu1804 'ubuntu:bionic'
+
+# generateForOS debsid 'debian:sid'
+# generateForOS debtesting 'debian:testing'
+# # ADD NEW CODENAMES HERE
+# generateForOS deb12 'debian:12'
+# generateForOS deb11 'debian:11'
+# generateForOS deb10 'debian:10'
+
+# generateForOS ubudevel 'ubuntu:devel'
+# # ADD NEW CODENAMES HERE
+# generateForOS ubu2310 'ubuntu:mantic'
+# generateForOS ubu2204 'ubuntu:jammy'
+# generateForOS ubu2004 'ubuntu:focal'
+# generateForOS ubu1804 'ubuntu:bionic'
