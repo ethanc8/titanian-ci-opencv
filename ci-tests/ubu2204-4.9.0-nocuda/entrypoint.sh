@@ -1,3 +1,4 @@
+#!/bin/bash
 uname -a
 apt-get update && apt-get install -y clang build-essential wget git sudo
 DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
