@@ -56,3 +56,4 @@
 | ubu2204 | [![ubu2204-4.9.0-nocuda build status](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu2204-4.9.0-nocuda.yml/badge.svg)](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu2204-4.9.0-nocuda.yml) |
 | ubu2004 | [![ubu2004-4.9.0-nocuda build status](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu2004-4.9.0-nocuda.yml/badge.svg)](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu2004-4.9.0-nocuda.yml) |
 | ubu1804 | [![ubu1804-4.9.0-nocuda build status](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu1804-4.9.0-nocuda.yml/badge.svg)](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu1804-4.9.0-nocuda.yml) |
+| ubu2204 | [![ubu2204-4.9.0-nocuda build status](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu2204-4.9.0-nocuda.yml/badge.svg)](https://github.com/ethanc8/titanian-ci-opencv/actions/workflows/ubu2204-4.9.0-nocuda.yml) |
