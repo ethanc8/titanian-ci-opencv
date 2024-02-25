@@ -1,6 +1,6 @@
 on:
   [push]
-name: ubu2204 - Build OpenCV 4.9.0 (no cuda)
+name: deb12 - Build OpenCV 4.9.0 (no cuda)
 jobs:
   testbuild:
     name: Building OpenCV
@@ -9,9 +9,9 @@ jobs:
       - name: Check out the build script repository
         uses: actions/checkout@master
       - name: Make scripts executable
-        run: chmod +x "ci-tests/ubu2204-4.9.0-nocuda/entrypoint.sh"
+        run: chmod +x "ci-tests/deb12-4.9.0-nocuda/entrypoint.sh"
       - name: Execute build script
-        uses: ./ci-tests/ubu2204-4.9.0-nocuda
+        uses: ./ci-tests/deb12-4.9.0-nocuda
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:

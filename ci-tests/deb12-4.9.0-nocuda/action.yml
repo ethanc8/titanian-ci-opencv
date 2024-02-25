@@ -1,0 +1,5 @@
+name: 'Run deb12-4.9.0-nocuda dockerfile'
+description: 'Run deb12-4.9.0-nocuda dockerfile'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

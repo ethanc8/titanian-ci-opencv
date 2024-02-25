@@ -108,7 +108,7 @@ generateForOS() {
 clean
 makedirs
 
-generateForOS ubu2204 'ubuntu:jammy'
+generateForOS deb12 'debian:12'
 
 # generateForOS debsid 'debian:sid'
 # generateForOS debtesting 'debian:testing'
