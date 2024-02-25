@@ -20,7 +20,7 @@ on:
   [push]
 name: $name - Build OpenCV $version (no cuda)
 jobs:
-  testbuild-$name-$version-nocuda:
+  testbuild-$name-nocuda:
     name: Building OpenCV
     runs-on: ubuntu-latest
     steps:
@@ -33,7 +33,7 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: deb-$name-$version-nocuda
+          name: deb-$name-nocuda
           path: \${{ github.workspace }}/libopencv-titanian-nocuda_$version-1+$name-1_amd64.deb
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
