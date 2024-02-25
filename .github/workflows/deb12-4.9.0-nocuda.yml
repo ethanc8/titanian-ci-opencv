@@ -2,7 +2,7 @@ on:
   [push]
 name: deb12 - Build OpenCV 4.9.0 (no cuda)
 jobs:
-  testbuild-deb12-4.9.0-nocuda:
+  testbuild-deb12-nocuda:
     name: Building OpenCV
     runs-on: ubuntu-latest
     steps:
@@ -15,7 +15,7 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: deb-deb12-4.9.0-nocuda
+          name: deb-deb12-nocuda
           path: ${{ github.workspace }}/libopencv-titanian-nocuda_4.9.0-1+deb12-1_amd64.deb
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
