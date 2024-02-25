@@ -1,0 +1,5 @@
+name: 'Run debsid-4.9.0-nocuda dockerfile'
+description: 'Run debsid-4.9.0-nocuda dockerfile'
+runs:
+  using: 'docker'
+  image: 'ci-tests/debsid-4.9.0-nocuda/Dockerfile'

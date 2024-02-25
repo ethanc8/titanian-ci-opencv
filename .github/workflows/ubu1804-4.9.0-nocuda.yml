@@ -1,0 +1,17 @@
+on:
+  [push]
+name: ubu1804 - Build OpenCV 4.9.0 (no cuda)
+jobs:
+  testbuild:
+    name: Building OpenCV
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the build script repository
+        uses: actions/checkout@master
+      - name: Execute build script
+        uses: ./ci-tests/ubu1804-4.9.0-nocuda
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: workspace_artifacts
+          path: ${{ github.workspace }}

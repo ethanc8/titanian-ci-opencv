@@ -1,0 +1,5 @@
+name: 'Run ubu1804-4.9.0-nocuda dockerfile'
+description: 'Run ubu1804-4.9.0-nocuda dockerfile'
+runs:
+  using: 'docker'
+  image: 'ci-tests/ubu1804-4.9.0-nocuda/Dockerfile'
