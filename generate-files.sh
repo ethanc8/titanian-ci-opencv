@@ -20,7 +20,7 @@ on:
   [push]
 name: $name - Build OpenCV $version (no cuda)
 jobs:
-  testbuild:
+  testbuild-$name-$version-nocuda:
     name: Building OpenCV
     runs-on: ubuntu-latest
     steps:
@@ -33,8 +33,17 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: workspace_artifacts
-          path: \${{ github.workspace }}
+          name: deb-$name-$version-nocuda
+          path: \${{ github.workspace }}/libopencv-titanian-nocuda_$version-1+$name-1_amd64.deb
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: \${{ secrets.GITHUB_TOKEN }}
+          file: \${{ github.workspace }}/libopencv-titanian-nocuda_$version-1+$name-1_amd64.deb
+          asset_name: libopencv-titanian-nocuda_$version-1+$name-1_amd64.deb
+          tag: \${{ github.ref }}
+          overwrite: true
+          body: "OpenCV $version built for $name"
 EOF
     mkdir -p "ci-tests/$name-$version-nocuda"
     cat <<EOF > "ci-tests/$name-$version-nocuda/action.yml" 
