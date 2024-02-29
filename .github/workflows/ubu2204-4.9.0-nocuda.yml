@@ -1,0 +1,28 @@
+on:
+  [push]
+name: ubu2204 - Build OpenCV 4.9.0 (no cuda)
+jobs:
+  testbuild-ubu2204-nocuda:
+    name: Building OpenCV
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the build script repository
+        uses: actions/checkout@master
+      - name: Make scripts executable
+        run: chmod +x "ci-tests/ubu2204-4.9.0-nocuda/entrypoint.sh"
+      - name: Execute build script
+        uses: ./ci-tests/ubu2204-4.9.0-nocuda
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-ubu2204-nocuda
+          path: ${{ github.workspace }}/libopencv-titanian-nocuda_4.9.0-1+ubu2204-1_amd64.deb
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ github.workspace }}/libopencv-titanian-nocuda_4.9.0-1+ubu2204-1_amd64.deb
+          asset_name: libopencv-titanian-nocuda_4.9.0-1+ubu2204-1_amd64.deb
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "OpenCV 4.9.0 built for ubu2204"
